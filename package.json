@@ -1,0 +1,15 @@
+{
+  "name": "test-api",
+  "version": "1.0.0",
+  "description": "This is an app to foster the api process in order to create multiple rules with different fields.",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "dev": "node fetchApplyTo.js"
+  },
+  "author": "Tram LN",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
