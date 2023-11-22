@@ -10,7 +10,8 @@
     "fetch-product": "node ./test-rules/fetchProductCondition.js",
     "fetch-date": "node ./test-rules/fetchDate,js",
     "fetch-exclude": "node ./test-rules/fetchExclude.js",
-    "fetch-test": "concurrently \"node ./test-rules/fetchPriority.js\" \"node ./test-rules/fetchApplyTo.js\" \"node ./test-rules/fetchMarketCondition.js\" \"node ./test-rules/fetchProductCondition.js\" \"node ./test-rules/fetchDate.js\" \"node ./test-rules/fetchExclude.js\""
+    "fetch-discount": "node ./test-rules/fetchDiscount.js",
+    "fetch-test": "concurrently \"node ./test-rules/fetchPriority.js\" \"node ./test-rules/fetchApplyTo.js\" \"node ./test-rules/fetchMarketCondition.js\" \"node ./test-rules/fetchProductCondition.js\" \"node ./test-rules/fetchDate.js\" \"node ./test-rules/fetchExclude.js\" \"node ./test-rules/fetchDiscount.js\""
   },
   "author": "Tram LN",
   "license": "ISC",
