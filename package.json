@@ -7,12 +7,16 @@
     "fetch-priority": "node ./test-rules/fetchPriority.js",
     "fetch-apply-to": "node ./test-rules/fetchApplyTo.js",
     "fetch-market": "node ./test-rules/fetchMarketCondition.js",
-    "fetch-test": "concurrently \"node ./test-rules/fetchPriority.js\" \"node ./test-rules/fetchApplyTo.js\" \"node ./test-rules/fetchMarketCondition.js\""
+    "fetch-product": "node ./test-rules/fetchProductCondition.js",
+    "fetch-date": "node ./test-rules/fetchDate,js",
+    "fetch-exclude": "node ./test-rules/fetchExclude.js",
+    "fetch-test": "concurrently \"node ./test-rules/fetchPriority.js\" \"node ./test-rules/fetchApplyTo.js\" \"node ./test-rules/fetchMarketCondition.js\" \"node ./test-rules/fetchProductCondition.js\" \"node ./test-rules/fetchDate.js\" \"node ./test-rules/fetchExclude.js\""
   },
   "author": "Tram LN",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^8.2.2",
+    "dotenv": "^16.3.1",
     "isomorphic-fetch": "^3.0.0"
   }
 }

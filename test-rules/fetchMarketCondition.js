@@ -2,6 +2,7 @@ const fetch = require('isomorphic-fetch');
 const domain = "test-tram-store-3.myshopify.com";
 const marketconditiontype = [0,1];
 const marketIds = ["3112534167"];
+const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
 
 const { generalRuleForAll } = require('../generalRule.js');
 
@@ -26,7 +27,7 @@ async function fetchMarket(){
         }
 
 
-        const sendRequest = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`,{
+        const sendRequest = await fetch(`${server}/cp/rules/add?domain=${domain}`,{
             method: 'put',
             body: JSON.stringify(marketConditionRule),
             headers: {'Content-Type':'application/json'}
@@ -35,7 +36,7 @@ async function fetchMarket(){
         console.log(`Response for Market Condition Created Rules: ${JSON.stringify(responseData)}`)
 
 
-        const sendRequestWithRegions = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`,{
+        const sendRequestWithRegions = await fetch(`${server}/cp/rules/add?domain=${domain}`,{
             method: 'put',
             body: JSON.stringify(marketConAllowedRegions),
             headers: {'Content-Type':'application/json'}

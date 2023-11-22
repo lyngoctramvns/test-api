@@ -1,10 +1,11 @@
 const fetch = require('isomorphic-fetch');
 const domain = "test-tram-store-3.myshopify.com"
 const productConditionType = [0, 1, 2, 3, 4];
-const productIds = [];
-const variantIds = [];
-const collectionIds = [];
+const productIds = [6936957485207,6936959418519];
+const variantIds = [40265478897815,40265479454871];
+const collectionIds = [268841025687,268838961303];
 const productTags = ["BSS_PRODUCT_TAG","NEW_PRODUCT_TAG"];
+const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
 
 const {
     generalRuleForAll
@@ -22,7 +23,7 @@ async function fetchProduct() {
         }
 
 
-        const response = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+        const response = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(productConditionRule),
             headers: { 'Content-Type': 'application/json' }
@@ -52,7 +53,7 @@ async function fetchProductWithValue (){
         data: {
             ...generalRuleForAll,
             name: "Testing Product Condition Field With Specific Variants",
-            product_condition_type: 2,
+            product_condition_type: 4,
             product_variants: variantIds
         }
     }
@@ -61,7 +62,7 @@ async function fetchProductWithValue (){
         data: {
             ...generalRuleForAll,
             name: "Testing Product Condition Field With Specific Collections",
-            product_condition_type: 3,
+            product_condition_type: 2,
             product_collections: collectionIds
         }
     }
@@ -76,28 +77,28 @@ async function fetchProductWithValue (){
         }
     }
 
-    const responseProduct = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+    const responseProduct = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(productRuleSpecific),
             headers: { 'Content-Type': 'application/json' }
     });
     const responseProductData = await responseProduct.json();
 
-    const responseVariants = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+    const responseVariants = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(productRuleVariants),
             headers: { 'Content-Type': 'application/json' }
     });
     const responseVariantData = await responseVariants.json();
 
-    const responseCollections = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+    const responseCollections = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(productRuleCollections),
             headers: { 'Content-Type': 'application/json' }
     });
     const responseCollectionData = await responseCollections.json();
 
-    const responseTags = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+    const responseTags = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(productRuleTags),
             headers: { 'Content-Type': 'application/json' }

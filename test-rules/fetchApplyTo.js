@@ -3,6 +3,7 @@ const domain = "test-tram-store-3.myshopify.com"
 const applyto = [0, 1, 2, 3, 4];
 const customerIds = [5906002247831,5962332340375];
 const customerTags = ["BSS_TAG","HAHAnowIgotyou"];
+const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
 
 const {
     generalRuleForAll
@@ -18,7 +19,7 @@ async function fetchApplyTo() {
                 apply_to: applyto[i]
             }
         }
-        const response = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+        const response = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(applyToRule),
             headers: { 'Content-Type': 'application/json' }
@@ -49,13 +50,13 @@ async function fetchApplyToWithValue (){
         }
     }
 
-    const responseCustomer = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+    const responseCustomer = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(applyToRuleCustomer),
             headers: { 'Content-Type': 'application/json' }
     });
     const responseApplyToCustomer = await responseCustomer.json();
-    const responseTag = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+    const responseTag = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(applyToRuleTag),
             headers: { 'Content-Type': 'application/json' }

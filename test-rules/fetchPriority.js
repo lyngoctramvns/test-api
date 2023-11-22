@@ -1,6 +1,7 @@
 const fetch = require('isomorphic-fetch');
 const domain = "test-tram-store-3.myshopify.com";
 const priority = [0, 1, 4, 40];
+const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
 
 const {
     generalRuleForAll
@@ -14,7 +15,7 @@ async function nodePriority(){
             name:`Testing Priority Fields With Value ${priority[i]}`,
             priority: priority[i]
         }}
-        const response = await fetch(`https://test-b2b-solution-api-21.test-bsscommerce.com/cp/rules/add?domain=${domain}`, {
+        const response = await fetch(`${server}/cp/rules/add?domain=${domain}`, {
             method: 'put',
             body: JSON.stringify(bodyPriority),
             headers: { 'Content-Type': 'application/json' }
