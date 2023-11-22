@@ -3,7 +3,7 @@ const fetch = require('isomorphic-fetch');
 const domain = process.env.DOMAIN;
 const marketconditiontype = [0,1];
 const marketIds = ["3112534167"];
-const server = process.env.SERVER;
+const server = process.env.API_SERVER;
 
 const { generalRuleForAll } = require('../generalRule.js');
 

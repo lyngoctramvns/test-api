@@ -2,8 +2,8 @@ require('dotenv').config()
 const fetch = require('isomorphic-fetch');
 const domain = process.env.DOMAIN;
 const discount = [0,1,2];
-const value = [100,200,700];
-const server = process.env.SERVER;
+const value = [50,200,40];
+const server = process.env.API_SERVER;
 
 const {
     generalRuleForAll

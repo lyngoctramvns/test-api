@@ -4,7 +4,7 @@ const domain = process.env.DOMAIN;
 const exclude = [0,1,2];
 const excludeCustomer = [5619738050711,5894117458071,5962332340375];
 const excludeTags = ["test","tramtest"];
-const server = process.env.SERVER;
+const server = process.env.API_SERVER;
 
 const {
     generalRuleForAll

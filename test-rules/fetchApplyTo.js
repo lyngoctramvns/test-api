@@ -4,7 +4,7 @@ const domain = process.env.DOMAIN;
 const applyto = [0, 1, 2, 3, 4];
 const customerIds = [5906002247831,5962332340375];
 const customerTags = ["BSS_TAG","HAHAnowIgotyou"];
-const server = process.env.SERVER;
+const server = process.env.API_SERVER;
 
 const {
     generalRuleForAll

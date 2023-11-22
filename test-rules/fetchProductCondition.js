@@ -6,7 +6,7 @@ const productIds = [6936957485207,6936959418519];
 const variantIds = [40265478897815,40265479454871];
 const collectionIds = [268841025687,268838961303];
 const productTags = ["BSS_PRODUCT_TAG","NEW_PRODUCT_TAG"];
-const server = process.env.SERVER;
+const server = process.env.API_SERVER;
 
 const {
     generalRuleForAll
