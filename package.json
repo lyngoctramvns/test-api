@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "This is an app to foster the api process in order to create multiple rules with different fields.",
   "main": "index.js",
-  "type":"module",
   "scripts": {
-    "fetch-apply-to": "node fetchApplyTo.js"
+    "fetch-priority": "node ./test-rules/fetchPriority.js",
+    "fetch-apply-to": "node ./test-rules/fetchApplyTo.js",
+    "fetch-market": "node ./test-rules/fetchMarketCondition.js",
+    "fetch-test": "concurrently \"node ./test-rules/fetchPriority.js\" \"node ./test-rules/fetchApplyTo.js\" \"node ./test-rules/fetchMarketCondition.js\""
   },
   "author": "Tram LN",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "concurrently": "^8.2.2",
+    "isomorphic-fetch": "^3.0.0"
   }
 }

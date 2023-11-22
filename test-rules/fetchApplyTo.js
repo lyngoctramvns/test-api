@@ -1,40 +1,19 @@
-import fetch from 'node-fetch';
+const fetch = require('isomorphic-fetch');
 const domain = "test-tram-store-3.myshopify.com"
 const applyto = [0, 1, 2, 3, 4];
 const customerIds = [5906002247831,5962332340375];
 const customerTags = ["BSS_TAG","HAHAnowIgotyou"];
 
-const generalRule = {
-    //import from a general file. File will be generated later
-    name: "testApplyto",
-    priority: 0,
-    status: 1,
-    apply_to: 0,
-    customer_ids: [],
-    customer_tags: [],
-    market_condition_type: 0,
-    market_ids: [],
-    exc_customer_tags: [],
-    exc_customers: [],
-    product_condition_type: 0,
-    product_ids: [],
-    product_collections: [],
-    product_tags: [],
-    product_variants: [],
-    discount_type: 0,
-    discount_value: 400,
-    start_date: null,
-    end_date: null,
-    exclude_from: 0
-
-}
+const {
+    generalRuleForAll
+} = require('../generalRule.js');
 
 async function fetchApplyTo() {
     let i;
     for (i = 0; i < applyto.length; i++) {
         const applyToRule = {
             data: {
-                ...generalRule,
+                ...generalRuleForAll,
                 name: `Testing Apply_To Field With Value ${applyto[i]}`,
                 apply_to: applyto[i]
             }
@@ -54,7 +33,7 @@ fetchApplyTo();
 async function fetchApplyToWithValue (){
     const applyToRuleCustomer = {
         data:{
-            ...generalRule,
+            ...generalRuleForAll,
             name: "Testing Apply_To Field With Customer Id",
             apply_to: 3,
             customer_ids: customerIds
@@ -63,7 +42,7 @@ async function fetchApplyToWithValue (){
 
     const applyToRuleTag = {
         data: {
-            ...generalRule,
+            ...generalRuleForAll,
             name: "Testing Apply_To Field With Customer Tag",
             apply_to: 4,
             customer_tags: customerTags
