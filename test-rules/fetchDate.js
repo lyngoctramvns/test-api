@@ -1,8 +1,10 @@
+require('dotenv').config()
 const fetch = require('isomorphic-fetch');
 const domain = process.env.DOMAIN;
 const startDate = [null, "2023-11-21T17:00:00.000Z"];
 const endDate = [null, "2024-08-29T17:00:00.000Z"];
 const server = process.env.SERVER;
+
 
 const {
     generalRuleForAll

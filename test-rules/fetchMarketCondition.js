@@ -1,3 +1,4 @@
+require('dotenv').config()
 const fetch = require('isomorphic-fetch');
 const domain = process.env.DOMAIN;
 const marketconditiontype = [0,1];
