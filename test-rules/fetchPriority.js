@@ -1,7 +1,7 @@
 const fetch = require('isomorphic-fetch');
-const domain = "test-tram-store-3.myshopify.com";
+const domain = process.env.DOMAIN;
 const priority = [0, 1, 4, 40];
-const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
+const server = process.env.SERVER;
 
 const {
     generalRuleForAll

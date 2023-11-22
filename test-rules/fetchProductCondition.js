@@ -1,11 +1,11 @@
 const fetch = require('isomorphic-fetch');
-const domain = "test-tram-store-3.myshopify.com"
+const domain = process.env.DOMAIN;
 const productConditionType = [0, 1, 2, 3, 4];
 const productIds = [6936957485207,6936959418519];
 const variantIds = [40265478897815,40265479454871];
 const collectionIds = [268841025687,268838961303];
 const productTags = ["BSS_PRODUCT_TAG","NEW_PRODUCT_TAG"];
-const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
+const server = process.env.SERVER;
 
 const {
     generalRuleForAll

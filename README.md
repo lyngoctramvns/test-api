@@ -6,3 +6,7 @@
 * to run all files in test-rule folder, run npm run fetch-test
 * Note:  for ES Module ("type": "module" in packpage.json) then the format has to be export default ... and import ... from
 * Note: for CommonJS (no type, or "type": "commonjs" in package.json) then the format has to be module.exports = ... and const ... = require()
+
+# ENV
+DOMAIN = "TESTSITE_DOMAIN"
+SERVER = "TESTSITE_SERVER"

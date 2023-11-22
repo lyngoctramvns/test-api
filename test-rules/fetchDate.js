@@ -1,8 +1,8 @@
 const fetch = require('isomorphic-fetch');
-const domain = "test-tram-store-3.myshopify.com";
+const domain = process.env.DOMAIN;
 const startDate = [null, "2023-11-21T17:00:00.000Z"];
 const endDate = [null, "2024-08-29T17:00:00.000Z"];
-const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
+const server = process.env.SERVER;
 
 const {
     generalRuleForAll

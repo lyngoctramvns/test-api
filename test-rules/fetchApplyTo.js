@@ -1,9 +1,11 @@
 const fetch = require('isomorphic-fetch');
-const domain = "test-tram-store-3.myshopify.com"
+const domain = process.env.DOMAIN;
 const applyto = [0, 1, 2, 3, 4];
 const customerIds = [5906002247831,5962332340375];
 const customerTags = ["BSS_TAG","HAHAnowIgotyou"];
-const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
+const server = process.env.SERVER;
+
+require('dotenv').config()
 
 const {
     generalRuleForAll

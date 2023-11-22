@@ -1,8 +1,8 @@
 const fetch = require('isomorphic-fetch');
-const domain = "test-tram-store-3.myshopify.com";
+const domain = process.env.DOMAIN;
 const marketconditiontype = [0,1];
 const marketIds = ["3112534167"];
-const server = "https://test-b2b-solution-api-21.test-bsscommerce.com"
+const server = process.env.SERVER;
 
 const { generalRuleForAll } = require('../generalRule.js');
 
